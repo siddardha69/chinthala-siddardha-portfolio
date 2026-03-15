@@ -1,0 +1,450 @@
+/* ========== EXPERIENCE CONTAINER ========== */
+.experience__container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.experience__container > div {
+  background: var(--color-bg-variant);
+  padding: 2rem 1.5rem;
+  border-radius: 2rem;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transform: translateY(30px);
+  opacity: 0;
+  animation: cardSlideIn 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.experience__frontend {
+  animation-delay: 0.2s;
+}
+
+.experience__backend {
+  animation-delay: 0.4s;
+}
+
+@keyframes cardSlideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.experience__container > div::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  transition: left 2s;
+}
+
+.experience__container > div h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  color: var(--color-white);
+  font-size: 1.3rem;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.experience__container > div h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--color-primary),
+    rgba(68, 68, 68, 0.3)
+  );
+  border-radius: 2px;
+}
+
+/* Theme-specific styles */
+.main-content:not(.bg-dark) .experience__container > div {
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(68, 68, 68, 0.1);
+}
+
+.main-content:not(.bg-dark) .experience__container > div h3 {
+  color: var(--color-black);
+}
+
+/* ========== EXPERIENCE CONTENT ========== */
+.experience__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  align-content: start;
+  flex: 1;
+}
+
+.experience__details {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 0.8rem;
+  border-radius: 1rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  transform: translateX(-20px);
+  opacity: 0;
+  animation: skillSlideIn 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+/* Staggered animation for skills */
+.experience__details:nth-child(1) {
+  animation-delay: 0.5s;
+}
+.experience__details:nth-child(2) {
+  animation-delay: 0.6s;
+}
+.experience__details:nth-child(3) {
+  animation-delay: 0.7s;
+}
+.experience__details:nth-child(4) {
+  animation-delay: 0.8s;
+}
+.experience__details:nth-child(5) {
+  animation-delay: 0.9s;
+}
+.experience__details:nth-child(6) {
+  animation-delay: 1s;
+}
+.experience__details:nth-child(7) {
+  animation-delay: 1.1s;
+}
+.experience__details:nth-child(8) {
+  animation-delay: 1.2s;
+}
+.experience__details:nth-child(9) {
+  animation-delay: 1.3s;
+}
+
+.experience__backend .experience__details:nth-child(1) {
+  animation-delay: 0.8s;
+}
+.experience__backend .experience__details:nth-child(2) {
+  animation-delay: 0.9s;
+}
+.experience__backend .experience__details:nth-child(3) {
+  animation-delay: 1s;
+}
+.experience__backend .experience__details:nth-child(4) {
+  animation-delay: 1.1s;
+}
+.experience__backend .experience__details:nth-child(5) {
+  animation-delay: 1.2s;
+}
+.experience__backend .experience__details:nth-child(6) {
+  animation-delay: 1.3s;
+}
+.experience__backend .experience__details:nth-child(7) {
+  animation-delay: 1.4s;
+}
+.experience__backend .experience__details:nth-child(8) {
+  animation-delay: 1.5s;
+}
+.experience__backend .experience__details:nth-child(9) {
+  animation-delay: 1.6s;
+}
+
+@keyframes skillSlideIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.experience__details::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--color-primary);
+  transform: scaleY(0);
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  border-radius: 0 3px 3px 0;
+}
+
+.experience__details-icon {
+  margin-top: 2px;
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  background: rgba(68, 68, 68, 0.1);
+  padding: 0.3rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2rem;
+  min-height: 2rem;
+}
+
+.experience__skill {
+  flex: 1;
+}
+
+.experience__skill h4 {
+  color: var(--color-white);
+  line-height: 1.1;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  transition: all 0.3s ease;
+}
+
+.experience__skill small {
+  color: var(--color-light-variant);
+  font-size: 0.85rem;
+  font-weight: 500;
+  padding: 0.1rem 0.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Skill level indicators with colors */
+.experience__level--proficient {
+  background: rgba(84, 197, 113, 0.2);
+  color: #54c571;
+  border-color: #54c571;
+}
+
+.experience__level--intermediate {
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  border-color: #ffc107;
+}
+
+.experience__level--basic {
+  background: rgba(108, 117, 125, 0.2);
+  color: #6c757d;
+  border-color: #6c757d;
+}
+
+/* Theme-specific content styles */
+.main-content:not(.bg-dark) .experience__details {
+  background: rgba(68, 68, 68, 0.02);
+}
+
+.main-content:not(.bg-dark) .experience__details-icon {
+  background: rgba(68, 68, 68, 0.1);
+  color: var(--color-primary);
+}
+
+.main-content:not(.bg-dark) .experience__skill h4 {
+  color: var(--color-black);
+}
+
+.main-content:not(.bg-dark) .experience__skill small {
+  background: rgba(68, 68, 68, 0.1);
+  color: var(--color-black);
+  border: 1px solid rgba(68, 68, 68, 0.2);
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Medium devices */
+@media screen and (max-width: 1024px) {
+  .experience__container {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .experience__container > div {
+    width: 90%;
+    padding: 2rem 1.5rem;
+    margin: 0 auto;
+  }
+
+  .experience__content {
+    gap: 1.2rem;
+  }
+}
+
+/* Small devices */
+@media screen and (max-width: 600px) {
+  .experience__container {
+    gap: 1.5rem;
+    padding: 0 1rem;
+  }
+
+  .experience__container > div {
+    width: 100%;
+    padding: 1.5rem 1rem;
+  }
+
+  .experience__container > div h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .experience__content {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .experience__details {
+    padding: 0.8rem;
+  }
+
+  .experience__details-icon {
+    min-width: 1.8rem;
+    min-height: 1.8rem;
+    font-size: 1rem;
+  }
+
+  .experience__skill h4 {
+    font-size: 0.95rem;
+  }
+
+  .experience__skill small {
+    font-size: 0.8rem;
+    padding: 0.15rem 0.6rem;
+  }
+}
+
+/* Very small devices */
+@media screen and (max-width: 375px) {
+  .experience__container > div {
+    padding: 1.5rem 1rem;
+  }
+
+  .experience__details {
+    gap: 0.8rem;
+    padding: 0.6rem;
+  }
+}
+
+/* ========== ACCESSIBILITY & PERFORMANCE ========== */
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .experience__container > div,
+  .experience__details {
+    animation: none;
+    transition: none;
+  }
+
+  .experience__container > div {
+    opacity: 1;
+    transform: none;
+  }
+
+  .experience__details {
+    opacity: 1;
+    transform: none;
+  }
+
+  .experience__details-icon {
+    transform: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.experience__details {
+  cursor: pointer;
+}
+
+.experience__details:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* Performance optimizations */
+.experience__container > div,
+.experience__details,
+.experience__details-icon {
+  will-change: transform;
+}
+
+/* ========== PREMIUM SIMPLIFICATION PASS ========== */
+.experience__container {
+  gap: 1.5rem;
+}
+
+.experience__container > div {
+  padding: 1.6rem 1.2rem;
+  border-radius: 1.25rem;
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.16);
+  animation: none;
+  transform: none;
+  opacity: 1;
+}
+
+.experience__container > div::before {
+  display: none;
+}
+
+.main-content:not(.bg-dark) .experience__container > div {
+  border-color: rgba(0, 0, 0, 0.12);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.08);
+}
+
+.experience__container > div h3 {
+  margin-bottom: 1.25rem;
+  padding-bottom: 0.75rem;
+  font-size: clamp(1.1rem, 0.5vw + 1rem, 1.35rem);
+}
+
+.experience__content {
+  gap: 0.8rem 1rem;
+}
+
+.experience__details {
+  gap: 0.75rem;
+  padding: 0.65rem 0.55rem;
+  border-radius: 0.85rem;
+  animation: none;
+  transform: none;
+  opacity: 1;
+}
+
+.experience__details::before {
+  display: none;
+}
+
+.experience__details-icon {
+  min-width: 1.8rem;
+  min-height: 1.8rem;
+  font-size: 1.05rem;
+  padding: 0.24rem;
+}
+
+.experience__skill h4 {
+  font-size: 0.96rem;
+  margin-bottom: 0.22rem;
+}
+
+.experience__skill small {
+  padding: 0.06rem 0.44rem;
+}

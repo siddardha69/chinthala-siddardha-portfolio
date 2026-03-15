@@ -1,0 +1,28 @@
+.error-boundary {
+  padding: 2rem;
+  text-align: center;
+  background: var(--color-bg-variant);
+  border-radius: 1rem;
+  margin: 2rem;
+  color: var(--color-white);
+}
+
+.error-boundary__btn {
+  padding: 0.75rem 1.5rem;
+  background: var(--color-primary);
+  color: var(--color-white);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+.error-boundary__details {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.error-boundary__pre {
+  font-size: 0.8rem;
+  overflow: auto;
+}
