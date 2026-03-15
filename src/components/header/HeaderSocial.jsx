@@ -13,7 +13,7 @@ const HeaderSocial = () => {
         <BsLinkedin />
       </a>
       <a
-        href='#'
+        href='https://github.com/siddardha69'
         aria-label='Github'
         target='_blank'
         rel='noreferrer'

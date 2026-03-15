@@ -1,5 +1,4 @@
 import './about.css';
-import SiddardhaProfile from '../../assets/siddardha_profile.jpg';
 import { FaAward } from 'react-icons/fa';
 import { TfiHeadphoneAlt } from 'react-icons/tfi';
 import { VscFolderLibrary } from 'react-icons/vsc';

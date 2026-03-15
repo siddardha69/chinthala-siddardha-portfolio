@@ -1,7 +1,6 @@
 import './header.css';
 import Cta from './CTA';
 import MEpng from '../../assets/siddardha_profile.jpg';
-import MEwebp from '../../assets/siddardha_profile.jpg';
 import HeaderSocial from './HeaderSocial';
 import { useTypewriter, Cursor } from 'react-simple-typewriter';
 
