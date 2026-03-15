@@ -1,4 +1,4 @@
-import defaultResume from '../assets/siddardha_resume.png';
+import defaultResume from '../assets/siddarth_resume.pdf';
 import { isAdminAuthenticated } from './adminAuthService';
 
 const RESUME_STORAGE_KEY = 'portfolio_resume_v1';
@@ -25,7 +25,7 @@ const getSupabaseResumeEndpoint = (query = '') => {
 
 const normalizeResume = (resume) => ({
     url: String(resume?.url || defaultResume).trim() || defaultResume,
-    fileName: String(resume?.fileName || 'Resume.png').trim() || 'Resume.png'
+    fileName: String(resume?.fileName || 'Siddartha_Resume.pdf').trim() || 'Siddartha_Resume.pdf'
 });
 
 const readResumeFromStorage = () => {
